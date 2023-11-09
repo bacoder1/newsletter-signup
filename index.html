@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" class="h-full min-h-screen">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <style>
+      * {
+        transition: 0.3s ease;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen min-h-full flex-row items-center justify-center font-roboto lg:flex lg:bg-charcoal-grey"
+  >
+    <div
+      class="m-0 flex h-auto flex-col p-0 lg:flex-row-reverse lg:rounded-[32px] lg:bg-white lg:p-6 lg:shadow-2xl lg:shadow-dark-slate-grey"
+      id="sign_up_component"
+    >
+      <img
+        src="../assets/images/illustration-sign-up-mobile.svg"
+        alt="illustration"
+        class="relative left-1/2 max-w-[750px] -translate-x-1/2 lg:hidden"
+      />
+      <img
+        src="../assets/images/illustration-sign-up-desktop.svg"
+        alt="illustration"
+        class="hidden lg:inline"
+      />
+      <div
+        class="mx-[25px] my-[30px] flex flex-col text-dark-slate-grey lg:ml-10 lg:mr-16 lg:w-[376px] lg:justify-center"
+      >
+        <h1
+          class="text-[2.55rem] font-bold text-dark-slate-grey lg:text-[3.5rem]"
+        >
+          Stay updated!
+        </h1>
+        <p class="mb-[26px] mt-3 text-[16px] text-dark-slate-grey">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <div class="align-center mb-2 flex flex-row gap-[14px]">
+          <img
+            src="../assets/images/icon-list.svg"
+            alt="icon-list"
+            class="self-start"
+          />
+          <p class="">Product discovery and building what matters</p>
+        </div>
+        <div class="align-center mb-2 flex flex-row gap-[14px]">
+          <img
+            src="../assets/images/icon-list.svg"
+            alt="icon-list"
+            class="self-start"
+          />
+          <p class="">Measuring to ensure updates are a success</p>
+        </div>
+        <div class="align-center mb-2 flex flex-row gap-[14px]">
+          <img
+            src="../assets/images/icon-list.svg"
+            alt="icon-list"
+            class="self-start"
+          />
+          <p class="">And much more!</p>
+        </div>
+        <div class="mt-9 flex justify-between">
+          <label for="email" class="text-xs font-bold">Email address</label>
+          <p class="hidden text-xs font-bold text-tomato" id="invalid_text">
+            Valid email required
+          </p>
+        </div>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="email@company.com"
+          class="mt-2 rounded-md border-[1px] border-grey px-[22px] py-[15.5px] font-bold outline-none transition-all duration-300 focus:border-dark-slate-grey focus-visible:border-dark-slate-grey"
+        />
+        <button
+          class="relative mt-6 flex cursor-pointer flex-row justify-center rounded-md bg-dark-slate-grey py-4 font-bold text-white"
+          onclick="checkValid()"
+        >
+          <span class="z-[1]">Subscribe to monthly newsletter</span>
+          <div
+            class="absolute inset-0 -z-[0] h-full w-full rounded-md bg-gradient-to-r from-[#FF537B] to-[#FF693D] opacity-0 shadow-lg shadow-tomato transition duration-300 hover:opacity-100"
+          ></div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="mx-6 mt-[148px] hidden flex-col lg:m-0 lg:h-[520px] lg:w-[504px] lg:rounded-[32px] lg:bg-white lg:px-16 lg:py-12"
+      id="success_component"
+    >
+      <img
+        src="../assets/images/icon-success.svg"
+        alt="checkmark"
+        class="h-[64px] w-[64px]"
+      />
+      <h2
+        class="mt-[40px] text-[2.55rem] font-bold leading-[55px] text-dark-slate-grey lg:text-[3.5rem]"
+      >
+        Thanks for subscribing!
+      </h2>
+      <p class="mt-6 text-[16px] text-dark-slate-grey">
+        A confirmation email has been sent to
+        <span id="email_display" class="font-bold">ash@loremcompany.com</span>.
+        Please open it and click the button inside to confirm your subscription
+      </p>
+      <button
+        class="mt-[266px] cursor-pointer flex-row justify-center rounded-md bg-dark-slate-grey py-4 font-bold text-white lg:mt-11"
+        onclick="dismiss()"
+      >
+        <span class="z-[1]">Dismiss message</span>
+        <div
+          class="absolute inset-0 -z-[0] h-full w-full rounded-md bg-gradient-to-r from-[#FF537B] to-[#FF693D] opacity-0 shadow-lg shadow-tomato transition duration-300 hover:opacity-100"
+          id="gradient"
+        ></div>
+      </button>
+    </div>
+    <script src="../main.js"></script>
+  </body>
+</html>
